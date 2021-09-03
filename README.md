@@ -4,30 +4,56 @@
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+This application has been built in order to help people reach the world's cities map faster and easer so it can navigate them to the correct place.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+1. Clone the repo into your local machine
+2. in your terminal and write the code below
+    `npm i`
+3. after installation has been done, navigate through your terminal to the file `MY-APP`.
+4. write `npm start` to start the application
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+Building this App, we used mainly React.js library, locationIQ API, and axios library. Also we used in designing : CSS and React Bootstrap library.
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+09-03-2021 06:00 pm - Application is now ready to show the map for the world's city with declearing the lat and lon related to that place.
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+This work has been done with collaboration with Omar Humamah, you can visit Omar's GitHub through this link : https://github.com/OmarHumamah
 
 ---
 
-Name of feature: ________________________________
+Name of feature: **Locations**
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30 minutes 
 
-Start time: _____
+Start time: 01:20
 
-Finish time: _____
+Finish time: 02:30
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1 hour
+
+
+
+Name of feature: **Map**
+
+Estimate of time needed to complete: 1.5 hours 
+
+Start time: 02:30
+
+Finish time: 04:00
+
+Actual time needed to complete: 2.5 hour
+
+
+Name of feature: **error**
+
+Estimate of time needed to complete: 15 minutes 
+
+Start time: 04:00
+
+Finish time: 04:15
+
+Actual time needed to complete: 15 min

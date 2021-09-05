@@ -1,4 +1,4 @@
-# Project Name
+# City Explore
 
 **Author**: Bashar Aldamen
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
@@ -21,7 +21,8 @@ Building this App, we used mainly React.js library, locationIQ API, and axios li
 09-03-2021 06:00 pm - Application is now ready to show the map for the world's city with declearing the lat and lon related to that place.
 
 ## Credit and Collaborations
-This work has been done with collaboration with Omar Humamah, you can visit Omar's GitHub through this link : https://github.com/OmarHumamah
+
+This work has been done with collaboration with **Omar Humamah**, you can visit Omar's GitHub through this link : https://github.com/OmarHumamah
 
 ---
 

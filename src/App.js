@@ -8,6 +8,7 @@ import Alert from "react-bootstrap/Alert";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import './App.css'
+import Weather from "./Components/weather";
 
 class App extends React.Component {
   constructor(props) {

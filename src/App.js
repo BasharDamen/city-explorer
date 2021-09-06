@@ -25,7 +25,7 @@ class App extends React.Component {
   renderLocation = async (event) => {
     event.preventDefault();
     let place = event.target.location.value;
-    let myKey = "pk.70f6912ea539ff543e7b2597a0322f12";
+    let myKey = "pk.a2207440c077668053a8e21d8dba7b3f";
     let URL = `https://eu1.locationiq.com/v1/search.php?key=${myKey}&q=${place}&format=json`;
 
     try {
@@ -82,7 +82,7 @@ class App extends React.Component {
         <Col xs={6} md={4}>
           {this.state.displayMap && (
             <Image
-              src={`https://maps.locationiq.com/v3/staticmap?key=pk.70f6912ea539ff543e7b2597a0322f12&center=${this.state.lat},${this.state.lon}&zoom=${this.state.zoomDeg}`}
+              src={`https://maps.locationiq.com/v3/staticmap?key=pk.a2207440c077668053a8e21d8dba7b3f&center=${this.state.lat},${this.state.lon}&zoom=${this.state.zoomDeg}`}
               roundedCircle
             />
           )}

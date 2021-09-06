@@ -25,7 +25,11 @@ Building this App, we used mainly React.js library, locationIQ API, and axios li
 This work has been done with collaboration with **Omar Humamah**, you can visit Omar's GitHub through this link : https://github.com/OmarHumamah
 
 ---
+## sketch 
 
+![](src\assets\imgs\city-explore.jpg)
+
+---
 Name of feature: **Locations**
 
 Estimate of time needed to complete: 30 minutes 

@@ -7,7 +7,7 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Alert from "react-bootstrap/Alert";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-import './App.css'
+import "./App.css";
 import Weather from "./Components/weather";
 
 class App extends React.Component {
@@ -26,7 +26,7 @@ class App extends React.Component {
   renderLocation = async (event) => {
     event.preventDefault();
     let place = event.target.location.value;
-    let myKey = "pk.a2207440c077668053a8e21d8dba7b3f";
+    let myKey = "pk.8ef314117e8a9349088d0a3afa79e734";
     let URL = `https://eu1.locationiq.com/v1/search.php?key=${myKey}&q=${place}&format=json`;
 
     try {
@@ -45,7 +45,7 @@ class App extends React.Component {
   };
 
   handleZooming = (event) => {
-    if (event.target.name == "zoomOut") {
+    if (event.target.name === "zoomOut") {
       this.setState({
         zoomDeg: this.state.zoomDeg - 3,
       });
@@ -83,7 +83,7 @@ class App extends React.Component {
         <Col xs={6} md={4}>
           {this.state.displayMap && (
             <Image
-              src={`https://maps.locationiq.com/v3/staticmap?key=pk.a2207440c077668053a8e21d8dba7b3f&center=${this.state.lat},${this.state.lon}&zoom=${this.state.zoomDeg}`}
+              src={`https://maps.locationiq.com/v3/staticmap?key=pk.8ef314117e8a9349088d0a3afa79e734&center=${this.state.lat},${this.state.lon}&zoom=${this.state.zoomDeg}`}
               roundedCircle
             />
           )}
@@ -98,23 +98,26 @@ class App extends React.Component {
             </ButtonGroup>
           )}
         </Col>
+        {this.state.displayMap && (
+          <Weather
+            name={this.state.displayName}
+            lat={this.state.lat}
+            lon={this.state.lon}
+          />
+        )}
 
+        {this.state.displayError && (
+          <Alert show={this.state.displayError} variant="success">
+            <Alert.Heading>Unable to geocode!</Alert.Heading>
+            <p>
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+              eget lacinia odio sem nec elit. Cras mattis consectetur purus sit
+              amet fermentum.
+            </p>
+          </Alert>
+        )}
 
-        {this.state.displayError && <Alert show={this.state.displayError} variant="success">
-        <Alert.Heading>Unable to geocode!</Alert.Heading>
-        <p>
-          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
-          lacinia odio sem nec elit. Cras mattis consectetur purus sit amet
-          fermentum.
-        </p>
-        
-      </Alert>}
-
-
-    <footer>
-      &copy;Bashar Aldamen
-    </footer>
-        
+        <footer>&copy;Bashar Aldamen</footer>
       </>
     );
   }

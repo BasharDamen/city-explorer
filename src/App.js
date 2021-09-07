@@ -76,9 +76,9 @@ class App extends React.Component {
           </Button>
         </Form>
 
-        <p> Loacation Name: {this.state.displayName}</p>
-        <p>Lat: {this.state.lat}</p>
-        <p>Lon: {this.state.lon}</p>
+        <p>Loacation Name: <strong>{this.state.displayName}</strong></p>
+        <p>Lat: <strong>{this.state.lat}</strong></p>
+        <p>Lon: <strong>{this.state.lon}</strong></p>
 
         <Col xs={6} md={4}>
           {this.state.displayMap && (

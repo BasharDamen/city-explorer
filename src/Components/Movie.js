@@ -8,7 +8,7 @@ class Movie extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      moviesArray:'',
+      moviesArray: [],
     };
   }
 
@@ -21,7 +21,7 @@ class Movie extends React.Component {
       .then((result) => {
         // console.log(result);
         this.setState({
-          moviesArray: result.data
+          moviesArray: result.data,
         });
       })
       .catch((err) => console.log(err));
@@ -40,13 +40,13 @@ class Movie extends React.Component {
         {this.state.moviesArray.map((item, i) => {
           return (
             <Card className="bg-dark text-white">
-              <Card.Img src={item[i].imageURL} alt="Card image" />
+              <Card.Img src={item.imageURL} alt="Card image" />
               <Card.ImgOverlay>
-                <Card.Title>Title: {item[i].title}</Card.Title>
-                <Card.Text>overview: {item[i].overview}</Card.Text>
-                <Card.Text>Average Votes: {item[i].avgVotes}</Card.Text>
-                <Card.Text>popularity: {item[i].popularity}</Card.Text>
-                <Card.Text>released:{item[i].released}</Card.Text>
+                <Card.Title>Title: {item.title}</Card.Title>
+                <Card.Text>overview: {item.overview}</Card.Text>
+                <Card.Text>Average Votes: {item.avgVotes}</Card.Text>
+                <Card.Text>popularity: {item.popularity}</Card.Text>
+                <Card.Text>released:{item.released}</Card.Text>
               </Card.ImgOverlay>
             </Card>
           );

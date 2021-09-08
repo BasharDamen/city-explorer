@@ -8,6 +8,7 @@ import Alert from "react-bootstrap/Alert";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import "./App.css";
+import Movie from "./Components/Movie";
 import Weather from "./Components/weather";
 
 class App extends React.Component {
@@ -20,6 +21,7 @@ class App extends React.Component {
       displayMap: false,
       displayError: false,
       zoomDeg: 18,
+      place:""
     };
   }
 
@@ -36,6 +38,7 @@ class App extends React.Component {
         lat: searchResult.data[0].lat,
         lon: searchResult.data[0].lon,
         displayName: searchResult.data[0].display_name,
+        place: place,
       });
     } catch (error) {
       this.setState({
@@ -45,14 +48,24 @@ class App extends React.Component {
   };
 
   handleZooming = (event) => {
-    if (event.target.name === "zoomOut") {
+    if (event.target.name === "zoomOut" && this.state.zoomDeg > 1) {
       this.setState({
         zoomDeg: this.state.zoomDeg - 3,
       });
-    } else if (event.target.name === "zoomIn") {
+    }
+    else if(event.target.name === "zoomOut" && this.state.zoomDeg === 1){
+      this.setState({
+        zoomDeg: this.state.zoomDeg
+      })
+    } 
+    else if (event.target.name === "zoomIn" && this.state.zoomDeg < 18) {
       this.setState({
         zoomDeg: this.state.zoomDeg + 3,
       });
+    }else if (event.target.name === "zoomIn" && this.state.zoomDeg === 18){
+      this.setState({
+        zoomDeg: this.state.zoomDeg
+      })
     }
   };
 
@@ -76,9 +89,15 @@ class App extends React.Component {
           </Button>
         </Form>
 
-        <p>Loacation Name: <strong>{this.state.displayName}</strong></p>
-        <p>Lat: <strong>{this.state.lat}</strong></p>
-        <p>Lon: <strong>{this.state.lon}</strong></p>
+        <p>
+          Loacation Name: <strong>{this.state.displayName}</strong>
+        </p>
+        <p>
+          Lat: <strong>{this.state.lat}</strong>
+        </p>
+        <p>
+          Lon: <strong>{this.state.lon}</strong>
+        </p>
 
         <Col xs={6} md={4}>
           {this.state.displayMap && (
@@ -97,15 +116,17 @@ class App extends React.Component {
               </Button>
             </ButtonGroup>
           )}
+          <div id="placeInfo"></div>
         </Col>
+        <>
         {this.state.displayMap && (
           <Weather
-            name={this.state.displayName}
-            lat={this.state.lat}
-            lon={this.state.lon}
+          name={this.state.place}
+          lat={this.state.lat}
+          lon={this.state.lon}
           />
-        )}
-
+          )}
+        {this.state.displayMap && <Movie movieName={this.state.place} />}
         {this.state.displayError && (
           <Alert show={this.state.displayError} variant="success">
             <Alert.Heading>Unable to geocode!</Alert.Heading>
@@ -116,6 +137,9 @@ class App extends React.Component {
             </p>
           </Alert>
         )}
+        
+        </>
+
 
         <footer>&copy;Bashar Aldamen</footer>
       </>
